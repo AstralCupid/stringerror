@@ -28,6 +28,7 @@ impl<T: Into<String>> From<T> for Error {
 mod tests {
     use super::*;
 
+    // Ensure that Display is working correctly.
     #[test]
     fn error_from_str() {
         let error: Error = "this is a test error".into();
@@ -35,6 +36,7 @@ mod tests {
         assert_eq!(err_display, "this is a test error");
     }
 
+    // Ensure that add_context is working correctly.
     #[test]
     fn add_context() {
         let err: Error = "this is a test error".into();
