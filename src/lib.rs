@@ -21,7 +21,9 @@ impl std::error::Error for Error {}
 
 // Implement 'from' so we can create errors automatically from strings.
 impl<T: Into<String>> From<T> for Error {
-    fn from(s: T) -> Self { Error(s.into()) }
+    fn from(s: T) -> Self {
+        Error(s.into())
+    }
 }
 
 #[cfg(test)]
