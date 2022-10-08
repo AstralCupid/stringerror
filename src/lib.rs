@@ -1,10 +1,10 @@
 // Error is just a wrapper around a string.
 #[derive(Clone, PartialEq, Eq, Debug)]
-struct Error(pub String);
+pub struct Error(pub String);
 
 // Define the core methods for error.
 impl Error {
-    fn add_context(&self, context: &str) -> Error {
+    pub fn add_context(&self, context: &str) -> Error {
         return format!("{}: {}", context, self).into();
     }
 }
